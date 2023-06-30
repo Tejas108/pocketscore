@@ -1,107 +1,309 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+}
+.title-wrap {
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.5rem;
+  z-index: 2;
+  position: absolute;
+  color: #f2f2f2;
+  text-shadow: 0px -2px 4px rgba(0, 0, 0, 0.4);
+  bottom: -32px;
+  /* left: 20px; */
+}
+h2 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  text-align: center;
+  width: 100%;
+}
+img {
+  position: relative !important;
+  z-index: 1;
+}
+main {
+  padding: 1.5rem;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+header > div {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+/* Add Players Screen Styles */
+.add-players {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-players h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.add-players .form-group {
+  margin-bottom: 10px;
+}
+
+.add-players .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-players .form-group input[type='text'],
+.add-players .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Game Screen Styles */
+.game-screen {
+  /* background-color: #fff; */
+  padding: 20px;
+  border-radius: 4px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.game-screen p {
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.game-screen .player-info {
+  margin-bottom: 10px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.game-screen .winner-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+  margin-top: 20px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Game Over Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.modal button {
+  width: 100%;
+}
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 4vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+main button:nth-child(1) {
+  margin-bottom: 2rem;
+}
+button:hover {
+  background-color: #ff8f00;
+}
+.game-over-btn {
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .button-wrap {
+    position: absolute;
+    width: 91%;
+    bottom: 18px;
   }
 }
+@media screen and (max-width: 768px) {
+  button {
+    font-size: 8vw;
+    height: 20vw;
+  }
+}
+
+/* PlayerForm Styles */
+.player-form {
+  margin: 20px auto;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.player-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.player-form input,
+.player-form select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.player-form input:focus,
+.player-form select:focus {
+  outline: none;
+  border-color: #0066ff;
+}
+.player-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.player-card.current-player {
+  background: #0090ff;
+}
+
+/* Index Styles */
+.player-card {
+  margin: 2rem 0 0 0;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.player-card:nth-child(2) {
+  margin-bottom: 3rem;
+}
+
+.player-card h3 {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  font-size: 4vh;
+}
+
+.player-card p {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+.game-screen button {
+  font-size: 2rem;
+}
+.player-name {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #0066ff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.skill-level {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #ff6f00;
+  color: #fff;
+  font-weight: bold;
+}
+
+.skill-level::after {
+  content: ' skill';
+}
+
+.start-btn {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.innings {
+  width: 96%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
