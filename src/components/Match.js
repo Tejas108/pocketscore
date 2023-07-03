@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { usePlayers } from '../context/PlayerContext';
-import { useRouter } from 'next/router';
 import PlayerCard from './PlayerCard';
 
 function Match() {
   const { players, currentPlayerIndex, incrementInnings, endGame, inningsPerGame, setCurrentPlayerIndex } = usePlayers();
-  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
 
