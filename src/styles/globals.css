@@ -69,11 +69,10 @@ header > div {
     font-size: .9rem !important;
     display: flex;
     justify-content: space-between;
-    /* align-items: start; */
     margin-left: 14px;
     position: absolute;
     width: 93%;
-    bottom: 0;
+    bottom: -5px;
 }
 
 /* Add Players Screen Styles */
@@ -314,6 +313,7 @@ button:hover {
   height: 174px;
   position: absolute;
   bottom: 20px;
+  font-size: 11vw;
 }
 
 .innings {

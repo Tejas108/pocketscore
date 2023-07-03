@@ -24,7 +24,7 @@ export default function Home() {
         </div>
       ))}
       {players.length >= 2 && (
-        <button className='start-btn' onClick={startMatch}>Start Match</button>
+        <button className='start-btn' onClick={startMatch}>Let's Goooo!</button>
       )}
     </main>
   );
