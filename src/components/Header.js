@@ -14,12 +14,10 @@ function Header() {
 
   return (
     <div className='title-wrap'>
-      <Image src={ball} alt="Ball" fill={true} />
+      <Image src={ball} alt="a blue billiards 8 ball on fire" fill={true} />
       <div className='title-wrap'>
         <h1>PocketScore Pro</h1>
       </div>
-      
-      {/* <button onClick={handleReset}>Reset</button> */}
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className='players-start'>
       {players.length < 2 &&
         <PlayerForm />
       }
