@@ -13,6 +13,7 @@ function PlayerForm() {
     addPlayer(name, skill);
     setName('');
     setSkill(2);
+    nameInputRef.current.focus();
   };
   // Give name field focus
   useEffect(() => {

@@ -6,9 +6,9 @@ import Footer from '../components/Footer';
 function App({ Component, pageProps }) {
   return (
     <PlayerProvider>
-      {/* <header>
+      <header>
         <Header />
-      </header> */}
+      </header>
       <Component {...pageProps} />
       {/* <Footer /> */}
     </PlayerProvider>
