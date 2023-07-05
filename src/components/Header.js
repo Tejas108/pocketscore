@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <div className='title-wrap'>
-      <Image src={ball} alt="a blue billiards 8 ball on fire" fill={true} />
+      <Image src={ball} alt="a blue billiards 8 ball on fire" fill={true} priority={true}/>
       <div className='title-wrap'>
         <h1>PocketScore Pro</h1>
       </div>

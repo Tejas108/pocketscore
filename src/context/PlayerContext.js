@@ -62,7 +62,6 @@ export function PlayerProvider({ children }) {
 
   // End the game and update players' data based on the outcome
   const endGame = (outcome) => {
-    console.log('innings:', inningsPerGame);
     setPlayers((prevPlayers) => {
       const newPlayers = [...prevPlayers];
       const currentPlayer = newPlayers[currentPlayerIndex];

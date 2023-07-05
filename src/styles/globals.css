@@ -278,6 +278,43 @@ button:hover {
 .players-start .player-card {
   display: flex;
 }
+.players-start .player-card-wrap:nth-child(3) .divider {
+  display: none;
+}
+.players-start .player-card-wrap .divider {
+  width: 100%; 
+  text-align: center; 
+margin: 1rem 0;
+  position: relative; 
+}
+.players-start .player-card-wrap .divider::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #696868;
+  left: 0;
+  top: 50%;
+  position: absolute;
+}
+.players-start .player-card-wrap .divider::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #696868;
+  right: 0;
+  top: 50%;
+  position: absolute;
+}
+.players-start .player-card-wrap .divider > span {
+  background: #f2f2f2;
+  display: block;
+  width: 4rem;
+  margin: 0 auto;
+  height: 20px;
+}  
+
 .game-screen button {
   font-size: 2rem;
 }
