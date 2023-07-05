@@ -74,7 +74,7 @@ function Match() {
           <div className="modal-content">
             <h2 id="gameOverTitle">Game Over</h2>
             <select value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)}>
-              <option value="">Select an Option</option>
+              <option value="">How Did It End?</option>
               <option value="Sunk the 8">Sunk the 8</option>
               <option value="Scratched the 8">Scratched the 8</option>
               <option value="Made 8 early">Made the 8 Early</option>
