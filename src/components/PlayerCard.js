@@ -17,6 +17,7 @@ function PlayerCard({ player, currentPlayer }) {
   return (
     <div className={`player-card ${isWinner ? 'winner' : ''} ${currentPlayer ? 'current-player' : ''}`}>
       <h3>{player.name}</h3>
+      <div className="divider"><span>wins</span></div>
       <p><span>Games:</span> <span>{player.gamesWon}</span></p>
       <p><span>Matches:</span> <span>{player.matchesWon}</span></p>
     </div>

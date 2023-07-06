@@ -148,6 +148,51 @@ footer {
       background: $lt-purple;
     }
   }
+  .divider {
+    margin: 1rem 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    > span {
+      background:  $current-player;
+      color: $card-bg;
+      display: block;
+      height: 20px;
+      margin: 0 auto;
+      width: 4rem;
+    }
+    &:before {
+      background: $page-bg;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      width: 50px;
+    }
+    &:after {
+      background: $page-bg;
+      content: "";
+      display: block;
+      height: 1px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 50px;
+    }
+  }
+  .player-card.current-player .divider {
+    > span {
+      background:  $lt-purple;
+      color: $current-player;
+    }
+  }
+  .player-card:not(.current-player) {
+    > span {
+      color:  $card-bg;
+    }
+  }
 }
 
 /* Game Over Modal Styles */
@@ -301,40 +346,6 @@ button {
         background-color: green;
       }
     }
-    .divider {
-      margin: 1rem 0;
-      position: relative;
-      text-align: center;
-      width: 100%;
-      > span {
-        background:  $page-bg;
-        color: $lt-gray;
-        display: block;
-        height: 20px;
-        margin: 0 auto;
-        width: 4rem;
-      }
-      &:before {
-        background: $drk-gray;
-        content: "";
-        display: block;
-        height: 1px;
-        left: 0;
-        position: absolute;
-        top: 50%;
-        width: 100px;
-      }
-      &:after {
-        background: $drk-gray;
-        content: "";
-        display: block;
-        height: 1px;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        width: 100px;
-      }
-    }
     &:nth-child(3) .divider {
       display: none;
     }
@@ -348,7 +359,40 @@ button {
   font-weight: bold;
   padding: 0.5rem 1rem;
 }
-
+.divider {
+  margin: 1rem 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  > span {
+    background:  $page-bg;
+    color: $lt-gray;
+    display: block;
+    height: 20px;
+    margin: 0 auto;
+    width: 4rem;
+  }
+  &:before {
+    background: $drk-gray;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100px;
+  }
+  &:after {
+    background: $drk-gray;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 100px;
+  }
+}
 .skill-level {
   background-color: #ff6f00;
   border-radius: 4px;
