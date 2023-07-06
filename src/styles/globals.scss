@@ -157,7 +157,9 @@ footer {
       background:  $current-player;
       color: $card-bg;
       display: block;
+      font-size: 1.8rem;
       height: 20px;
+      letter-spacing: 1px;
       margin: 0 auto;
       width: 4rem;
     }
@@ -368,6 +370,7 @@ button {
     background:  $page-bg;
     color: $lt-gray;
     display: block;
+    font-size: 3rem;
     margin: 0 auto;
     width: 4rem;
   }
@@ -420,7 +423,7 @@ select {
   border: 1px solid #ccc !important;
   border: none;
   color: #111;
-  font-size: 16px;
+  font-size: 1.6rem;
   min-height: 42px;
   outline: none;
   padding: 0.5rem;
@@ -489,4 +492,7 @@ select:disabled {
 .player-card.current-player p span:nth-child(2) {
   background: white;
   color: #696868;
+}
+#gameOverTitle {
+  color: $page-bg;
 }
