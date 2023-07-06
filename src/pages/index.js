@@ -4,11 +4,10 @@ import Match from '../components/Match';
 
 export default function Home() {
   const { players, isMatchOn, startMatch } = usePlayers();
-  
+
   if (isMatchOn) {
     return <Match />;
   }
-
   return (
     <main className='players-start'>
       {players.length < 2 &&

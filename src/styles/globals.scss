@@ -244,8 +244,8 @@ button {
   padding: 10px 20px;
   transition: background-color 0.3s ease;
   width: 100%;
-  &:hover {
-    background-color: #ff8f00;
+  &:hover, &:active {
+    background-color: darken($card-bg, 10%);
   }
 }
 @media screen and (max-width: 768px) {
@@ -445,7 +445,7 @@ select::after {
 /* Hover and focus styles */
 select:hover,
 select:focus {
-  border-color: #0066ff;
+  border-color: #0066ff !important;
 }
 
 /* Disabled state */
