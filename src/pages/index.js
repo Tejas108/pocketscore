@@ -4,7 +4,7 @@ import Match from '../components/Match';
 
 export default function Home() {
   const { players, isMatchOn, startMatch } = usePlayers();
-  console.log(players[0])
+  
   if (isMatchOn) {
     return <Match />;
   }

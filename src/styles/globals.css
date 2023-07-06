@@ -322,6 +322,9 @@ margin: 1rem 0;
   font-size: 2rem;
   padding: 30px 0;
 }
+.game-screen .player-card {
+  padding: .5rem;
+}
 .player-card.winner {
   background-color: green;
 }
@@ -398,28 +401,40 @@ select:disabled {
   cursor: not-allowed;
 }
 
-.innings {
+.inning-wrap {
   width: 96%;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
   margin-bottom: 1rem;
   margin-top: -32px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  flex-direction: column;
 }
+
 .game-screen .player-card p {
   margin-bottom: 10px;
 }
-.player-card p span:nth-child(2) {
+
+.player-card p span:nth-child(2),
+.inning span {
   background: #5e5d5d;
   border-radius: 3px;
   color: white;
   font-weight: bold;
-  padding: 3px 10px;
+  padding: 3px 5px;
+}
+.inning {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .player-card.current-player p span:nth-child(2) {
   background: white;

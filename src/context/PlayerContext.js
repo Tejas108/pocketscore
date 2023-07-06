@@ -56,8 +56,8 @@ export function PlayerProvider({ children }) {
   function incrementInnings() {
     if (currentPlayerIndex === startingPlayerIndex + 1) {
       setInningsPerGame((prevInnings) => prevInnings + 1);
+      setInningsPerMatch((prevInnings) => prevInnings + 1);
     }
-    setInningsPerMatch((prevInnings) => prevInnings + 1);
   }
 
   // End the game and update players' data based on the outcome
@@ -66,7 +66,7 @@ export function PlayerProvider({ children }) {
       const newPlayers = [...prevPlayers];
       const currentPlayer = newPlayers[currentPlayerIndex];
       const otherPlayer = newPlayers[(currentPlayerIndex + 1) % newPlayers.length];
-
+      setInningsPerGame(0);
       if (outcome === 'win') {
         currentPlayer.gamesWon += 1;
         if (
@@ -77,6 +77,7 @@ export function PlayerProvider({ children }) {
           currentPlayer.gamesWon = 0;
           otherPlayer.gamesWon = 0;
           setIsMatchOver(true); // Set match over status
+          setInningsPerMatch(0);
         }
       } else {
         otherPlayer.gamesWon += 1;

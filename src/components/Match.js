@@ -3,7 +3,7 @@ import { usePlayers } from '../context/PlayerContext';
 import PlayerCard from './PlayerCard';
 
 function Match() {
-  const { players, currentPlayerIndex, incrementInnings, endGame, inningsPerGame, setCurrentPlayerIndex } = usePlayers();
+  const { players, currentPlayerIndex, incrementInnings, endGame, inningsPerGame, inningsPerMatch, setCurrentPlayerIndex } = usePlayers();
   const [showModal, setShowModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
 
@@ -58,14 +58,22 @@ function Match() {
           />
         ))}
       </div>
-      <div className="innings">
-        <p>Game Innings</p>
-        <div>
-          <span>{inningsPerGame}</span>
+      <div className="inning-wrap">
+        <div className="inning">
+          <p>Game Innings</p>
+          <div>
+            <span>{inningsPerGame}</span>
+          </div>
+        </div>
+        <div className="inning">
+          <p>Match Innings</p>
+          <div>
+            <span>{inningsPerMatch}</span>
+          </div>
         </div>
       </div>
       <div className="button-wrap">
-        <button onClick={handleEndTurn}>End {currentPlayer.name}&apos;s Turn</button>
+        <button onClick={handleEndTurn}>{currentPlayer.name}&apos;s Turn Over</button>
         <button className="game-over-btn" onClick={handleGameOver}>Game Over</button>
         <button className="reset-btn" onClick={handleReset}>Reset</button>
       </div>
