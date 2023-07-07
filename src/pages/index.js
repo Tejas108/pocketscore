@@ -1,7 +1,6 @@
 import { usePlayers } from '../context/PlayerContext';
 import PlayerForm from '../components/PlayerForm';
 import Match from '../components/Match';
-// import sanity from './sanity';
 
 export default function Home() {
   const { players, isMatchOn, startMatch } = usePlayers();
