@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { usePlayers } from '../context/PlayerContext';
 
-function PlayerForm() {
+function PlayerForm({ pets }) {
   const { addPlayer } = usePlayers();
   const [name, setName] = useState('');
   const [skill, setSkill] = useState(2);
@@ -23,6 +23,7 @@ function PlayerForm() {
   return (
     <div className="player-card-form">
       <h2>Add Players</h2>
+      
       <div className='player-form'>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">
@@ -40,7 +41,6 @@ function PlayerForm() {
           <button type="submit">Add Player</button>
         </form>
       </div>
-
     </div>
 
   );
