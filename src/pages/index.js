@@ -4,7 +4,13 @@ import Match from '../components/Match';
 
 export default function Home() {
   const { players, isMatchOn, startMatch } = usePlayers();
+  // Handle the reset button click
+  const handleReset = () => {
+    // Clear player data and local storage
+    localStorage.removeItem('playerData');
 
+    window.location.reload();
+  };
   if (isMatchOn) {
     return <Match />;
   }
@@ -26,7 +32,10 @@ export default function Home() {
         </div>
       ))}
       {players.length >= 2 && (
-        <button className='start-btn' onClick={startMatch}>Go!</button>
+        <div className="button-wrap">
+          <button className='cancel-btn' onClick={handleReset}>Reset</button>
+          <button className='start-btn' onClick={startMatch}>Go!</button>
+        </div>
       )}
     </main>
   );

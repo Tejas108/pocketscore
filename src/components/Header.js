@@ -13,12 +13,11 @@ function Header() {
   };
 
   return (
+
     <div className='title-wrap'>
-      <Image src={ball} alt="a blue billiards 8 ball on fire" fill={true} priority={true}/>
-      <div className='title-wrap'>
-        <h1><em>PocketScore Pro</em></h1>
-      </div>
+      <h1><em>PocketScore Pro</em></h1>
     </div>
+
   );
 }
 

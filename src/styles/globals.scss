@@ -1,13 +1,16 @@
 /* Vars */
 $page-bg: #1B2430;
-$card-bg: #51557E;
-$current-player:#D6D5A8;
+$primary: #51557e;
+$current-player: #d6d5a8;
 $drk-gray: #696868;
 $lt-gray: #f2f2f2;
 $lt-purple: #816797;
 $border: #ccc;
 $input-bg: #f8f8f8;
 
+@mixin neo-shadow {
+  box-shadow: 5px 5px 5px #bebebe, -5px -5px 15px #ffffff;
+}
 /* Global Styles */
 html {
   font-size: 62.5%;
@@ -18,20 +21,19 @@ body {
   background-color: $page-bg;
   margin: 0;
   color: $drk-gray;
+  height: 100lvw;
 }
 .title-wrap {
   margin: 0 auto;
 }
 h1 {
-  color:  #fff;
+  color: #fff;
   font-family: MuseoModerno;
-  font-size: 4rem;
-  left: 20px;
-  margin: -6rem auto 0 auto;
+  font-size: 10svw;
   letter-spacing: 1px;
 }
 h2 {
-  color: $lt-gray;
+  color: #fff;
   font-size: 3rem;
   margin-top: 0;
   text-align: center;
@@ -104,7 +106,7 @@ footer {
     margin-bottom: 1rem;
     label {
       display: block;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
     input[type="text"],
     select {
@@ -125,8 +127,35 @@ footer {
   }
   .player-card {
     padding: 0.5rem;
+    border-radius: 8px;
+    background: #e0e0e0;
     p {
       margin-bottom: 1rem;
+    }
+    .score-wrap {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      div {
+        border: 1px solid;
+        padding: 0.5rem;
+        text-align: center;
+        border-radius: 4px;
+        // box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+        // box-shadow: 0 -3px 6px rgba(255, 255, 255, 0.5),
+        // 0 2px 2px rgba(0, 0, 0, 0.3);
+        span {
+          &:first-child {
+            font-size: 1.4rem;
+          }
+          &:last-child {
+            // text-shadow: 0 -2px 2px rgba(255, 255, 255, 0.5),
+            // 0 2px 2px rgba(0, 0, 0, 0.3);
+            //text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+            font-size: 6.5rem;
+          }
+        }
+      }
     }
   }
   .player-info {
@@ -142,7 +171,7 @@ footer {
     font-size: 1rem;
     height: 11vw;
     margin: 0.5rem auto;
-    margin: .5rem auto 2rem auto;
+    margin: 0.5rem auto 2rem auto;
     padding: 0;
     &:nth-child(1) {
       background: $lt-purple;
@@ -154,8 +183,8 @@ footer {
     text-align: center;
     width: 100%;
     > span {
-      background:  $current-player;
-      color: $card-bg;
+      background: $current-player;
+      color: $primary;
       display: block;
       font-size: 1.8rem;
       height: 20px;
@@ -186,13 +215,13 @@ footer {
   }
   .player-card.current-player .divider {
     > span {
-      background:  $lt-purple;
+      background: $lt-purple;
       color: $current-player;
     }
   }
   .player-card:not(.current-player) {
     > span {
-      color:  $card-bg;
+      color: $primary;
     }
   }
 }
@@ -236,7 +265,7 @@ footer {
 }
 
 button {
-  background-color: $card-bg;
+  background-color: $primary;
   border-radius: 4px;
   border: none;
   color: #fff;
@@ -246,8 +275,9 @@ button {
   padding: 10px 20px;
   transition: background-color 0.3s ease;
   width: 100%;
-  &:hover, &:active {
-    background-color: darken($card-bg, 10%);
+  &:hover,
+  &:active {
+    background-color: darken($primary, 10%);
   }
 }
 @media screen and (max-width: 768px) {
@@ -265,7 +295,21 @@ button {
   display: flex;
   font-size: 2.6rem;
   justify-content: center;
-  padding: 30px 0;
+  padding: 3rem 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:active {
+  //   box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.2), inset 0 -2px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.players-start .button-wrap {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 4rem;
 }
 
 /* PlayerForm Styles */
@@ -300,7 +344,7 @@ button {
   align-items: flex-start;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: space-between;
   margin-bottom: 2rem;
   .player-card {
@@ -315,9 +359,8 @@ button {
 .player-card {
   align-items: center;
   background-color: $current-player;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: $card-bg;
+  border-radius: 8px;
+  color: $primary;
   flex: 1;
   justify-content: space-between;
   padding: 1rem;
@@ -367,8 +410,8 @@ button {
   text-align: center;
   width: 100%;
   > span {
-    background:  $page-bg;
-    color: $lt-gray;
+    background: $page-bg;
+    color: #fff;
     display: block;
     font-size: 3rem;
     margin: 0 auto;
@@ -376,6 +419,7 @@ button {
   }
   &:before {
     background: $drk-gray;
+    // box-shadow: 0 1px 1px rgb(255, 255, 255);
     content: "";
     display: block;
     height: 1px;
@@ -386,6 +430,7 @@ button {
   }
   &:after {
     background: $drk-gray;
+    // box-shadow: 0 1px 1px rgb(255, 255, 255);
     content: "";
     display: block;
     height: 1px;
@@ -409,10 +454,13 @@ button {
 }
 
 .start-btn {
-  font-size: 20vw;
-  height: 115px;
-  margin: 4rem auto 0 auto;
-  width: 100%;
+  // font-size: 20vw;
+  // height: 115px;
+  // margin: 0 auto;
+  // width: 100%;
+  &:active {
+    // box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.2), inset 0 -2px 2px rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* Remove default styles */
@@ -472,25 +520,27 @@ select:disabled {
 
 .player-card p span:nth-child(2),
 .inning span {
-  background: #5e5d5d;
+  background: $primary;
   border-radius: 3px;
-  color: white;
+  color: #fff;
+  font-size: 3rem;
   font-weight: bold;
-  padding: 3px 5px;
+  padding: 0.6rem 1rem;
 }
 .inning {
   background: $current-player;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: $card-bg;
+  //box-shadow: 5px 5px 5px #bebebe, -5px -5px 15px #ffffff;
+  color: $primary;
   display: flex;
+  font-size: 3rem;
   justify-content: space-between;
-  margin-bottom: 10px;
-  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1rem;
   width: 100%;
 }
 .player-card.current-player p span:nth-child(2) {
-  background: white;
+  background: #fff;
   color: #696868;
 }
 #gameOverTitle {

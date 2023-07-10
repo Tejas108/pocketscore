@@ -9,7 +9,7 @@ function App({ Component, pageProps }) {
       <header>
         <Header />
       </header>
-      <Component {...pageProps} />
+        < Component {...pageProps} />
       {/* <Footer /> */}
     </PlayerProvider>
   );
