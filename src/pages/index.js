@@ -24,7 +24,7 @@ export default function Home() {
       }
       {players.map((player, index) => (
         <div key={index} className='player-card-wrap'>
-          <div className='player-card'>
+          <div className='player-card' role="alert">
             <h3>{player.name}</h3>
             <p>SL: {player.skill}</p>
           </div>
