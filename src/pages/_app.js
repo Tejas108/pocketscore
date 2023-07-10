@@ -25,18 +25,20 @@ function App({ Component, pageProps }) {
           <Header />
         </header>
         {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4EYYTV3CTY"></Script>
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          src={'https://www.googletagmanager.com/gtag/js?id=G-4EYYTV3CTY'}
         />
         <Script
+          id="gascript"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXX', {
+            gtag('config', 'G-4EYYTV3CTY', {
               page_path: window.location.pathname,
             });
           `,

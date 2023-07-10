@@ -6,15 +6,7 @@ function Match() {
   const { players, currentPlayerIndex, incrementInnings, endGame, inningsPerGame, inningsPerMatch, setCurrentPlayerIndex } = usePlayers();
   const [showModal, setShowModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
-  const selectInputRef = useRef(null);
   const currentPlayer = players[currentPlayerIndex];
-
-useEffect(() => {
-  return () => {
-    selectInputRef.current.focus();
-  }
-}, [])
-
 
   // Handle the end of a player's turn
   const handleEndTurn = () => {
@@ -88,7 +80,7 @@ useEffect(() => {
         <div className="modal" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle">
           <div className="modal-content">
             <h2 id="gameOverTitle">Game Over</h2>
-            <select ref={selectInputRef} value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)}>
+            <select value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)}>
               <option value="">How Did It End?</option>
               <option value="Sunk the 8">Sunk the 8</option>
               <option value="Scratched the 8">Scratched the 8</option>
