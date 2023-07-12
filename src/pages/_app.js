@@ -27,10 +27,10 @@ function App({ Component, pageProps }) {
           <Header />
         </header>
         {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4EYYTV3CTY"></Script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GRLJME9YFK"></Script>
         <Script
           strategy="afterInteractive"
-          src={'https://www.googletagmanager.com/gtag/js?id=G-4EYYTV3CTY'}
+          src={'https://www.googletagmanager.com/gtag/js?id=G-GRLJME9YFK'}
         />
         <Script
           id="gascript"
@@ -40,11 +40,11 @@ function App({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-4EYYTV3CTY', {
+            gtag('config', 'G-GRLJME9YFK', {
               page_path: window.location.pathname,
             });
           `,
-          }}wq
+          }}
         />
         <Component {...pageProps} />
       </>
