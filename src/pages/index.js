@@ -1,11 +1,13 @@
 import { usePlayers } from '../context/PlayerContext';
 import PlayerForm from '../components/PlayerForm';
 import Match from '../components/Match';
-import gtag from 'ga-gtag';
+import {useEffect} from'react';
+
 
 export default function Home() {
   const { players, isMatchOn, startMatch } = usePlayers();
 
+  
   // Handle the reset button click
   const handleReset = () => {
     // Clear player data and local storage

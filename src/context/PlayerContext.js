@@ -58,7 +58,7 @@ export function PlayerProvider({ children }) {
   function trackBtnClickEvent() {
     gtag('event', 'start_game', {
       screen: 'index',
-      type: 'button',
+      button: 'Go!',
     })
   }
   // Increment the innings count, both per game and per match

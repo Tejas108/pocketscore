@@ -18,6 +18,7 @@ function App({ Component, pageProps }) {
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
+
   }, [router.events]);
   return (
     <PlayerProvider>
@@ -43,9 +44,9 @@ function App({ Component, pageProps }) {
               page_path: window.location.pathname,
             });
           `,
-          }}
+          }}wq
         />
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </>
     </PlayerProvider>
   );
