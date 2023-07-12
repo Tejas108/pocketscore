@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from 'react';
+import gtag from 'ga-gtag';
 
 // Create the player context
 const PlayerContext = createContext();
@@ -12,8 +13,7 @@ export function PlayerProvider({ children }) {
   const [startingPlayerIndex, setStartingPlayerIndex] = useState(0); // Index of the starting player
   const [inningsPerGame, setInningsPerGame] = useState(0); // Number of innings per game
   const [inningsPerMatch, setInningsPerMatch] = useState(0); // Number of innings per match
-  const [isMatchOver, setIsMatchOver] = useState(false); // New state variable
-
+  const [isMatchOver, setIsMatchOver] = useState(false); // Store match over status
 
   // Load players' data from local storage on component mount
   useEffect(() => {
@@ -29,7 +29,8 @@ export function PlayerProvider({ children }) {
   }, [players]);
 
   // Add a new player to the players' list
-  function addPlayer(name, skill) {
+  function addPlayer(name, skill, race) {
+    console.log('addPlayer race: ', race, 'addPlayer skill: ', skill);
     const newPlayer = {
       name,
       skill,
@@ -37,8 +38,10 @@ export function PlayerProvider({ children }) {
       gamesWon: 0,
       inningsPerGame: 0,
       inningsPerMatch: 0,
+      race
     };
     setPlayers((prevPlayers) => [...prevPlayers, newPlayer]);
+
   }
 
   // Start the match if there are at least two players
@@ -49,9 +52,15 @@ export function PlayerProvider({ children }) {
       setInningsPerGame(0);
       setInningsPerMatch(0);
       setIsMatchOver(false); // Reset match over status
+      trackBtnClickEvent();
     }
   }
-
+  function trackBtnClickEvent() {
+    gtag('event', 'start_game', {
+      screen: 'index',
+      type: 'button',
+    })
+  }
   // Increment the innings count, both per game and per match
   function incrementInnings() {
     if (currentPlayerIndex === startingPlayerIndex + 1) {

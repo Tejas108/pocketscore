@@ -1,9 +1,11 @@
 import { usePlayers } from '../context/PlayerContext';
 import PlayerForm from '../components/PlayerForm';
 import Match from '../components/Match';
+import gtag from 'ga-gtag';
 
 export default function Home() {
   const { players, isMatchOn, startMatch } = usePlayers();
+
   // Handle the reset button click
   const handleReset = () => {
     // Clear player data and local storage
@@ -26,7 +28,7 @@ export default function Home() {
         <div key={index} className='player-card-wrap'>
           <div className='player-card' role="alert">
             <h3>{player.name}</h3>
-            <p>SL: {player.skill}</p>
+            <p>SL: {player.skill}{player.race}</p>
           </div>
           <div className="divider"><span>vs</span></div>
         </div>

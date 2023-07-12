@@ -5,10 +5,11 @@ import Footer from '../components/Footer';
 import Script from "next/script";
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import * as gtag from "../lib/gtag";
+import gtag from 'ga-gtag';
 
 function App({ Component, pageProps }) {
   const router = useRouter();
+
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
