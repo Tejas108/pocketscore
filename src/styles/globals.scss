@@ -1,5 +1,5 @@
 /* Vars */
-$page-bg: #1B2430;
+$page-bg: #1b2430;
 $primary: #51557e;
 $current-player: #d6d5a8;
 $drk-gray: #696868;
@@ -9,7 +9,9 @@ $border: #ccc;
 $input-bg: #f8f8f8;
 
 @mixin neo-shadow {
-  box-shadow: 5px 5px 5px #bebebe, -5px -5px 15px #ffffff;
+  box-shadow:
+    5px 5px 5px #bebebe,
+    -5px -5px 15px #ffffff;
 }
 /* Global Styles */
 html {
@@ -141,17 +143,11 @@ footer {
         padding: 0.5rem;
         text-align: center;
         border-radius: 4px;
-        // box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
-        // box-shadow: 0 -3px 6px rgba(255, 255, 255, 0.5),
-        // 0 2px 2px rgba(0, 0, 0, 0.3);
         span {
           &:first-child {
             font-size: 1.4rem;
           }
           &:last-child {
-            // text-shadow: 0 -2px 2px rgba(255, 255, 255, 0.5),
-            // 0 2px 2px rgba(0, 0, 0, 0.3);
-            //text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
             font-size: 10rem;
           }
         }
@@ -299,9 +295,6 @@ button {
   &:last-child {
     margin-bottom: 0;
   }
-  &:active {
-  //   box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.2), inset 0 -2px 2px rgba(0, 0, 0, 0.2);
-  }
 }
 
 .players-start .button-wrap {
@@ -419,7 +412,6 @@ button {
   }
   &:before {
     background: $drk-gray;
-    // box-shadow: 0 1px 1px rgb(255, 255, 255);
     content: "";
     display: block;
     height: 1px;
@@ -430,7 +422,6 @@ button {
   }
   &:after {
     background: $drk-gray;
-    // box-shadow: 0 1px 1px rgb(255, 255, 255);
     content: "";
     display: block;
     height: 1px;
@@ -451,16 +442,6 @@ button {
 
 .skill-level::after {
   content: " skill";
-}
-
-.start-btn {
-  // font-size: 20vw;
-  // height: 115px;
-  // margin: 0 auto;
-  // width: 100%;
-  &:active {
-    // box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.2), inset 0 -2px 2px rgba(0, 0, 0, 0.2);
-  }
 }
 
 /* Remove default styles */
@@ -530,7 +511,6 @@ select:disabled {
 .inning {
   background: $current-player;
   border-radius: 4px;
-  //box-shadow: 5px 5px 5px #bebebe, -5px -5px 15px #ffffff;
   color: $primary;
   display: flex;
   font-size: 3rem;

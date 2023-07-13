@@ -72,7 +72,7 @@ function Match() {
         </div>
       </div>
       <div className="button-wrap">
-        <button onClick={handleEndTurn}>{currentPlayer.name}&apos;s Turn Over</button>
+        <button onClick={handleEndTurn}>End {currentPlayer.name}&apos;s Turn</button>
         <button className="game-over-btn" onClick={handleGameOver}>Game Over</button>
         <button className="reset-btn" onClick={handleReset}>Reset</button>
       </div>
@@ -85,6 +85,7 @@ function Match() {
               <option value="Sunk the 8">Sunk the 8</option>
               <option value="Scratched the 8">Scratched the 8</option>
               <option value="Made 8 early">Made the 8 Early</option>
+              <option value="Made 8 in wrong pocket">Made 8 in wrong pocket</option>
             </select>
             <button onClick={handleOutcomeConfirm}>New Game</button>
             <button onClick={() => setShowModal(false)}>Cancel</button>
