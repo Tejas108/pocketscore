@@ -26,9 +26,10 @@ function App({ Component, pageProps }) {
         <header>
           <Header />
         </header>
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GRLJME9YFK"></Script>
+        <Component {...pageProps} />
+         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <Script
+          id="gtag-script"
           strategy="afterInteractive"
           src={'https://www.googletagmanager.com/gtag/js?id=G-GRLJME9YFK'}
         />
@@ -46,7 +47,6 @@ function App({ Component, pageProps }) {
           `,
           }}
         />
-        <Component {...pageProps} />
       </>
     </PlayerProvider>
   );
