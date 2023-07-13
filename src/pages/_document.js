@@ -12,8 +12,8 @@ export default function Document() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=MuseoModerno"></link>
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,400;1,300&display=swap" rel="stylesheet"></link>
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EYYTV3CTY"></script> */}
-        <Script
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PN8G48X"></script>
+        {/* <Script
           id="gascript"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -25,7 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PN8G48X');
           `,
           }}
-        />
+        /> */}
       </Head>
       <body>
 
