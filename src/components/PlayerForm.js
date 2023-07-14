@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { usePlayers } from '../context/PlayerContext';
+import gtag from 'ga-gtag';
 
 function PlayerForm() {
-  const { addPlayer } = usePlayers();
+  const { addPlayer,handleClicks } = usePlayers();
   const [name, setName] = useState('');
   const [skill, setSkill] = useState(2);
   const [race, setRace] = useState(null);
@@ -15,15 +16,21 @@ function PlayerForm() {
     addPlayer(name, skill, race);
     setName('');
     setSkill(2);
+    handleClicks('button_click', 'index', 'Add Player'); // event, page, label
     // setRace(() => {
     //   if (skill > 2) {
     //     setRace
     //   }
     // });
-    console.log('handleSubmit race: ', race);
+    console.log('handleSubmit game race: ', race);
     console.log('handleSubmit skill: ', skill);
     nameInputRef.current.focus();
   };
+
+  // const handleClicks = (e) => {
+  //   e.preventDefault();
+  //   return e.
+  // }
   // Give name field focus
   useEffect(() => {
     nameInputRef.current.focus();

@@ -31,7 +31,7 @@ function App({ Component, pageProps }) {
         <Script
           id="gtag-script"
           strategy="afterInteractive"
-          src={'https://www.googletagmanager.com/gtag/js?id=G-GRLJME9YFK'}
+          src={'https://www.googletagmanager.com/gtag/js?id=G-DNVC8LR75K'}
         />
         <Script
           id="gascript"
@@ -41,7 +41,7 @@ function App({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-GRLJME9YFK', {
+            gtag('config', 'G-DNVC8LR75K', {
               page_path: window.location.pathname,
             });
           `,

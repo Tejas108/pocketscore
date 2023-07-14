@@ -14,6 +14,7 @@ export function PlayerProvider({ children }) {
   const [inningsPerGame, setInningsPerGame] = useState(0); // Number of innings per game
   const [inningsPerMatch, setInningsPerMatch] = useState(0); // Number of innings per match
   const [isMatchOver, setIsMatchOver] = useState(false); // Store match over status
+  const [events, setEvents] = useState([]); // Store the GA events
 
   // Load players' data from local storage on component mount
   useEffect(() => {
@@ -52,14 +53,29 @@ export function PlayerProvider({ children }) {
       setInningsPerGame(0);
       setInningsPerMatch(0);
       setIsMatchOver(false); // Reset match over status
-      trackBtnClickEvent();
     }
   }
-  function trackBtnClickEvent() {
-    gtag('event', 'reset_game', {
-      screen: 'game',
-      button_text: 'Reset',
-    })
+  function handleClicks(event, screen, label) {
+    // gtag('event', 'reset_game', {
+    //   screen: 'game',
+    //   button_text: 'Reset',
+    // })
+    console.log('handleClicks', event, screen, label);
+    const clickEvent = {
+      event: event,
+      screen: screen,
+      event_label: label,
+    };
+    // const clkAddPlayer = {
+    //   event: 'add_player',
+    //   screen: 'index',
+    //   button_text: 'Add Player',
+    // };
+    // Concatenate the events array with the new events
+    setEvents([...events, clickEvent]);
+    console.log('events: ', events);
+    // Call the gtag function with the updated events array
+    gtag('event', events);
   }
   // Increment the innings count, both per game and per match
   function incrementInnings() {
@@ -119,6 +135,7 @@ export function PlayerProvider({ children }) {
     inningsPerGame,
     inningsPerMatch,
     setCurrentPlayerIndex,
+    handleClicks
   };
 
   // Provide the value to consuming components
