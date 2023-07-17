@@ -20,12 +20,12 @@ function PlayerForm() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push([{
       'event': 'button_click',
-      screen: 'index',
-      label: 'Add Player',
+      'screen': 'index',
+      'label': 'Add Player',
     }, {
       'event': 'button_click',
       screen: 'index2',
-      label: 'Add Player2',
+      'label': 'Add Player2',
     }]);
     // setRace(() => {
     //   if (skill > 2) {
