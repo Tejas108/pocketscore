@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { usePlayers } from '../context/PlayerContext';
-import gtag from 'ga-gtag';
+import { event } from "nextjs-google-analytics";
 
 function PlayerForm() {
   const { addPlayer, handleClicks } = usePlayers();
@@ -16,17 +16,23 @@ function PlayerForm() {
     addPlayer(name, skill, race);
     setName('');
     setSkill(2);
+
+    event('button_click', {
+      category: 'index',
+      label: 'Add Player',
+    })
+
     //handleClicks('button_click', 'index', 'Add Player'); // event, page, label
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push([{
-      'event': 'button_click',
-      'screen': 'index',
-      'label': 'Add Player',
-    }, {
-      'event': 'button_click',
-      'screen': 'index2',
-      'label': 'Add Player2',
-    }]);
+    // window.dataLayer = window.dataLayer || [];
+    // window.dataLayer.push([{
+    //   'event': 'button_click',
+    //   'screen': 'index',
+    //   'label': 'Add Player',
+    // }, {
+    //   'event': 'button_click',
+    //   'screen': 'index2',
+    //   'label': 'Add Player2',
+    // }]);
     // setRace(() => {
     //   if (skill > 2) {
     //     setRace
