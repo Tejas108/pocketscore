@@ -23,7 +23,7 @@ function PlayerForm() {
       screen: 'index',
       label: 'Add Player',
     }, {
-      'event': 'button_click2',
+      'event': 'button_click',
       screen: 'index2',
       label: 'Add Player2',
     }]);
