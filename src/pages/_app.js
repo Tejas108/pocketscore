@@ -30,8 +30,8 @@ function App({ Component, pageProps }) {
          {/* Global Site Tag (gtag.js) - Google Analytics */}
         <Script
           id="gtag-script"
-          strategy="afterInteractive"
-          src={'https://www.googletagmanager.com/gtag/js?id=G-DNVC8LR75K'}
+          strategy="beforeInteractive"
+          src={'https://www.googletagmanager.com/gtag/js?id=GTM-T66S36J'}
         />
         <Script
           id="gascript"
@@ -41,7 +41,7 @@ function App({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-DNVC8LR75K', {
+            gtag('config', 'G-K8CXGCYFGE', {
               page_path: window.location.pathname,
             });
           `,

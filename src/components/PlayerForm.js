@@ -3,7 +3,7 @@ import { usePlayers } from '../context/PlayerContext';
 import gtag from 'ga-gtag';
 
 function PlayerForm() {
-  const { addPlayer,handleClicks } = usePlayers();
+  const { addPlayer, handleClicks } = usePlayers();
   const [name, setName] = useState('');
   const [skill, setSkill] = useState(2);
   const [race, setRace] = useState(null);
@@ -16,7 +16,17 @@ function PlayerForm() {
     addPlayer(name, skill, race);
     setName('');
     setSkill(2);
-    handleClicks('button_click', 'index', 'Add Player'); // event, page, label
+    //handleClicks('button_click', 'index', 'Add Player'); // event, page, label
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push([{
+      'event': 'button_click',
+      screen: 'index',
+      label: 'Add Player',
+    }, {
+      'event': 'button_click2',
+      screen: 'index2',
+      label: 'Add Player2',
+    }]);
     // setRace(() => {
     //   if (skill > 2) {
     //     setRace
@@ -40,12 +50,12 @@ function PlayerForm() {
   return (
     <div className="player-card-form">
       <h2>Add Players</h2>
-      
+
       <div className='player-form'>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">
             Name:
-            <input type="text" id="name" name="name" value={name} ref={nameInputRef} onChange={(e) => setName(e.target.value)} required/>
+            <input type="text" id="name" name="name" value={name} ref={nameInputRef} onChange={(e) => setName(e.target.value)} required />
           </label>
           <label htmlFor="SL">
             Skill Level:

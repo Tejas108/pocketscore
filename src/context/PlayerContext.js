@@ -56,26 +56,21 @@ export function PlayerProvider({ children }) {
     }
   }
   function handleClicks(event, screen, label) {
-    // gtag('event', 'reset_game', {
-    //   screen: 'game',
-    //   button_text: 'Reset',
-    // })
+
     console.log('handleClicks', event, screen, label);
     const clickEvent = {
       event: event,
       screen: screen,
       event_label: label,
     };
-    // const clkAddPlayer = {
-    //   event: 'add_player',
-    //   screen: 'index',
-    //   button_text: 'Add Player',
-    // };
+
     // Concatenate the events array with the new events
     setEvents([...events, clickEvent]);
     console.log('events: ', events);
     // Call the gtag function with the updated events array
     gtag('event', events);
+
+    
   }
   // Increment the innings count, both per game and per match
   function incrementInnings() {
