@@ -5,23 +5,23 @@ import Footer from '../components/Footer';
 import Script from "next/script";
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import gtag from 'ga-gtag';
+// import gtag from 'ga-gtag';
 
 function App({ Component, pageProps }) {
   const router = useRouter();
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
   console.log(GA_MEASUREMENT_ID);
 
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
+  // useEffect(() => {
+  //   const handleRouteChange = (url) => {
+  //     gtag.pageview(url);
+  //   };
+  //   router.events.on("routeChangeComplete", handleRouteChange);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
 
-  }, [router.events]);
+  // }, [router.events]);
   return (
     <PlayerProvider>
       <>
