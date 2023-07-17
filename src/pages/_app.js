@@ -30,7 +30,7 @@ function App({ Component, pageProps }) {
          {/* Global Site Tag (gtag.js) - Google Analytics */}
         <Script
           id="gtag-script"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           src={'https://www.googletagmanager.com/gtag/js?id=GTM-T66S36J'}
         />
         <Script
