@@ -30,7 +30,7 @@ function App({ Component, pageProps }) {
         </header>
         <Component {...pageProps} />
          {/* Global Site Tag (gtag.js) - Google Analytics */}
-         <Script
+         {/* <Script
   src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
   strategy="afterInteractive"
 />
@@ -41,7 +41,7 @@ function App({ Component, pageProps }) {
     gtag('js', new Date());
     gtag('config', '${GA_MEASUREMENT_ID}');
   `}
-</Script>
+</Script> */}
       </>
     </PlayerProvider>
   );

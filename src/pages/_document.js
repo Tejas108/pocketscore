@@ -12,7 +12,18 @@ export default function Document() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap"></link>
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,400;1,300&display=swap" rel="stylesheet"></link>
-
+        <Script
+  src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_MEASUREMENT_ID}');
+  `}
+</Script>
       </Head>
       {/* <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-PN8G48X"/> */}
       <body>
