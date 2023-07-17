@@ -24,7 +24,7 @@ function PlayerForm() {
       'label': 'Add Player',
     }, {
       'event': 'button_click',
-      screen: 'index2',
+      'screen': 'index2',
       'label': 'Add Player2',
     }]);
     // setRace(() => {
