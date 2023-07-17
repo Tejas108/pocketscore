@@ -12,9 +12,11 @@ export default function Document() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap"></link>
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,400;1,300&display=swap" rel="stylesheet"></link>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-GRLJME9YFK"/>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-PN8G48X"/>
       </Head>
       <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN8G48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <Main />
         <NextScript />
       </body>
