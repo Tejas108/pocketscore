@@ -20,7 +20,7 @@ function PlayerForm() {
     event('button_click', {
       category: 'index',
       label: 'Add Player',
-    })
+    });
 
     //handleClicks('button_click', 'index', 'Add Player'); // event, page, label
     // window.dataLayer = window.dataLayer || [];

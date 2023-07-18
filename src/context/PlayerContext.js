@@ -39,7 +39,7 @@ export function PlayerProvider({ children }) {
       gamesWon: 0,
       inningsPerGame: 0,
       inningsPerMatch: 0,
-      race
+      race: 0
     };
     setPlayers((prevPlayers) => [...prevPlayers, newPlayer]);
 
