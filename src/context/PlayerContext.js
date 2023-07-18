@@ -15,10 +15,12 @@ export function PlayerProvider({ children }) {
   const [inningsPerMatch, setInningsPerMatch] = useState(0); // Number of innings per match
   const [isMatchOver, setIsMatchOver] = useState(false); // Store match over status
   const [events, setEvents] = useState([]); // Store the GA events
+  const [race, setRace] = useState(0); // Store the race
 
   // Load players' data from local storage on component mount
   useEffect(() => {
     const storedPlayers = localStorage.getItem('playerData');
+    console.log('race state: ', race);
     if (storedPlayers) {
       setPlayers(JSON.parse(storedPlayers));
     }
@@ -30,8 +32,11 @@ export function PlayerProvider({ children }) {
   }, [players]);
 
   // Add a new player to the players' list
-  function addPlayer(name, skill, race) {
-    console.log('addPlayer race: ', race, 'addPlayer skill: ', skill);
+  function addPlayer(name, skill) {
+    if (skill > 3) {
+      setRace(skill - 1);
+    }
+    // console.log('addPlayer race: ', race, 'addPlayer skill: ', skill);
     const newPlayer = {
       name,
       skill,
@@ -39,7 +44,7 @@ export function PlayerProvider({ children }) {
       gamesWon: 0,
       inningsPerGame: 0,
       inningsPerMatch: 0,
-      race: 0
+      race
     };
     setPlayers((prevPlayers) => [...prevPlayers, newPlayer]);
 

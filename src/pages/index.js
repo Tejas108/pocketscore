@@ -30,7 +30,7 @@ export default function Home() {
         <div key={index} className='player-card-wrap'>
           <div className='player-card' role="alert">
             <h3>{player.name}</h3>
-            <p>SL: {player.skill}{player.race}</p>
+            <p>SL: {player.skill} Race: {player.race}</p>
           </div>
           <div className="divider"><span>vs</span></div>
         </div>
