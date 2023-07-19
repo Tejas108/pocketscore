@@ -18,7 +18,6 @@ function PlayerCard({ player, currentPlayer }) {
     <div className={`player-card ${isWinner ? 'winner' : ''} ${currentPlayer ? 'current-player' : ''}`}>
       <h2>{player.name}</h2>
       <div className="score-wrap">
-        <p>{player.race}</p>
         <div><span>Games</span> <span>{player.gamesWon}</span></div>
         <div><span>Matches</span> <span>{player.matchesWon}</span></div>
       </div>

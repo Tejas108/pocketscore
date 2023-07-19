@@ -33,13 +33,19 @@ h1 {
   font-family: MuseoModerno;
   font-size: 10svw;
   letter-spacing: 1px;
+  margin: 0;
 }
 h2 {
-  color: #fff;
+  color: $primary;
   font-size: 3rem;
   margin-top: 0;
   text-align: center;
   width: 100%;
+}
+.players-start {
+  h2 {
+    color: #e0e0e0;
+  }
 }
 img {
   position: relative !important;
@@ -124,6 +130,9 @@ footer {
 .game-screen {
   border-radius: 4px;
   padding: 2rem;
+  h2 span:nth-child(3) span {
+    display: none;
+  }
   p {
     margin: 0;
   }
@@ -131,6 +140,11 @@ footer {
     padding: 0.5rem;
     border-radius: 8px;
     background: #e0e0e0;
+    &.current-player {
+      h2 {
+        color: #e0e0e0
+      };
+    }
     p {
       margin-bottom: 1rem;
     }
@@ -209,10 +223,14 @@ footer {
       width: 50px;
     }
   }
-  .player-card.current-player .divider {
-    > span {
-      background: $lt-purple;
-      color: $current-player;
+  .player-card.current-player {
+    h2 {
+    }
+    .divider {
+      > span {
+        background: $lt-purple;
+        color: $current-player;
+      }
     }
   }
   .player-card:not(.current-player) {
@@ -337,7 +355,8 @@ button {
       outline: none;
     }
   }
-  select, input {
+  select,
+  input {
     margin-bottom: 1.5rem;
   }
 }

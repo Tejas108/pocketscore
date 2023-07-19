@@ -6,6 +6,7 @@ function PlayerForm() {
   const { addPlayer, handleClicks } = usePlayers();
   const [name, setName] = useState('');
   const [skill, setSkill] = useState(2);
+  const [race, setRace] = useState();
   const [count, setCount] = useState(1);
   const nameInputRef = useRef(null);
 
@@ -13,10 +14,12 @@ function PlayerForm() {
   const handleSubmit = (e) => {
     console.log('handle submit');
     e.preventDefault();
-    addPlayer(name, skill);
+
+    addPlayer(name, skill, race);
     setName('');
     setSkill(2);
     setCount(count + 1);
+
     // Custom event tracking for GA4
     event('button_click', {
       category: 'index',
@@ -25,11 +28,22 @@ function PlayerForm() {
 
     nameInputRef.current.focus();
   };
+  // Calculate games needed to win based on skill level
+  const handleRace = () => {
+    if (skill > 3) {
+      setRace(skill - 1);
+      console.log('click - skill > 3 - race: ', race);
+    } else {
+      setRace(2);
+    }
+  }
 
-  // Give name field focus
   useEffect(() => {
+    // Give name field focus
     nameInputRef.current.focus();
-  }, []);
+
+    handleRace();
+  }, [setRace, skill]);
 
   return (
     <div className="player-card-form">
@@ -37,7 +51,7 @@ function PlayerForm() {
 
       <div className='player-form'>
         <form onSubmit={handleSubmit}>
-          <legend>Player { count }</legend>
+          <legend>Player {count}</legend>
           <label htmlFor="name">
             Name:
             <input type="text" id="name" name="name" value={name} ref={nameInputRef} onChange={(e) => setName(e.target.value)} required />

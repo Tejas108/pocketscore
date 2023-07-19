@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { usePlayers } from '../context/PlayerContext';
 import PlayerCard from './PlayerCard';
+import Innings from './Innings';
 
 function Match() {
   const { players, currentPlayerIndex, incrementInnings, endGame, inningsPerGame, inningsPerMatch, setCurrentPlayerIndex } = usePlayers();
@@ -47,6 +48,13 @@ function Match() {
 
   return (
     <main className="game-screen">
+      <h2 style={{ color: '#e0e0e0' }}>
+        <span>Race </span>
+        {/* <span>Race is {player[0].race} - {player[1].race}</span> */}
+        {players.map((player, index) => (
+          <span key={index}>{player.race} <span className='race-to'> to </span></span> 
+        ))}
+      </h2>
       <div className="player-cards">
         {players.map((player, index) => (
           <PlayerCard
@@ -57,20 +65,7 @@ function Match() {
           />
         ))}
       </div>
-      <div className="inning-wrap">
-        <div className="inning">
-          <p>Game Innings</p>
-          <div>
-            <span>{inningsPerGame}</span>
-          </div>
-        </div>
-        <div className="inning">
-          <p>Match Innings</p>
-          <div>
-            <span>{inningsPerMatch}</span>
-          </div>
-        </div>
-      </div>
+      <Innings inningsPerGame={inningsPerGame} inningsPerMatch={inningsPerMatch} />
       <div className="button-wrap">
         <button onClick={handleEndTurn}>End {currentPlayer.name}&apos;s Turn</button>
         <button className="game-over-btn" onClick={handleGameOver}>Game Over</button>
