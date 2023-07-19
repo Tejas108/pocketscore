@@ -183,7 +183,7 @@ footer {
     margin: 0.5rem auto;
     margin: 0.5rem auto 2rem auto;
     padding: 0;
-    &:nth-child(1) {
+    &:nth-child(1):not(.inning-wrap button) {
       background: $lt-purple;
     }
   }
@@ -310,9 +310,6 @@ button {
   font-size: 2.6rem;
   justify-content: center;
   padding: 3rem 0;
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .players-start .button-wrap {
@@ -329,7 +326,7 @@ button {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
-  padding: 20px 40px;
+  padding: 2rem 4rem;
   legend {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -519,11 +516,10 @@ select:disabled {
   flex-direction: column;
   font-size: 1.6rem;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -12px;
-  width: 96%;
+  margin: -1.2rem auto 1rem auto;
+  #content {
+    width: 100%;
+  }
 }
 
 .player-card p span:nth-child(2),

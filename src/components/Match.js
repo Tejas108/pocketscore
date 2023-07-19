@@ -52,7 +52,7 @@ function Match() {
         <span>Race </span>
         {/* <span>Race is {player[0].race} - {player[1].race}</span> */}
         {players.map((player, index) => (
-          <span key={index}>{player.race} <span className='race-to'> to </span></span> 
+          <span key={index}>{player.race} <span className='race-to'> to </span></span>
         ))}
       </h2>
       <div className="player-cards">
@@ -66,6 +66,7 @@ function Match() {
         ))}
       </div>
       <Innings inningsPerGame={inningsPerGame} inningsPerMatch={inningsPerMatch} />
+
       <div className="button-wrap">
         <button onClick={handleEndTurn}>End {currentPlayer.name}&apos;s Turn</button>
         <button className="game-over-btn" onClick={handleGameOver}>Game Over</button>
